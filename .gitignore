@@ -1,0 +1,25 @@
+# Build directories
+build/
+
+# Log files
+.log
+
+# Test files
+test.*
+
+# Compiled files
+*.scc
+*.out
+
+# Windows compiled executables
+scc*.exe
+
+# Swap files
+*.swp
+
+# Programming enviroments
+.vscode/
+.idea/
+
+# Python stuff
+__pycache__
