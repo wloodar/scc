@@ -20,15 +20,15 @@
  *
  * @author  bellrise
  */
-#include <scc/argparse.h>
-#include <scc/meta.h>
-#include <stdio.h>
+#ifndef SCC_META_H
+#define SCC_META_H
+
+/* This header contains some meta information about the whole project,
+   along with some const values that are used in different places. */
+
+#ifndef SCC_VERSION
+# define SCC_VERSION "(undefined)"
+#endif
 
 
-i32 main(i32 argc, char **argv)
-{
-    ArgumentResult args;
-    argparse(&args, argc, argv);
-
-    return 0;
-}
+#endif /* SCC_META_H */

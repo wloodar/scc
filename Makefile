@@ -71,7 +71,7 @@ INCLUDE_FLAGS = -I$(ROOT)/include -I$(ROOT)/../include
 # The default CFLAGS are all set to all warnings, and the newest C version.
 
 CFLAGS = -Wall -Wextra -Wpedantic -Wno-unused-command-line-argument -std=c2x \
-		 -O3 -Wno-unused-result -ldl -Wno-pointer-arith -Wno-unused-parameter
+		 -O3 -Wno-unused-result
 
 
 # DEBUG is defined it the debug target is selected. Additionally, if the
@@ -188,11 +188,6 @@ __setup:
 	echo "Creating directories"
 	mkdir -p build
 	mkdir -p build/objects
-
-	echo "Stealing source code from SVM"
-	cp $(ROOT)/../src/string.c $(ROOT)/src/string.c
-	cp $(ROOT)/../src/safety.c $(ROOT)/src/safety.c
-	cp $(ROOT)/../src/debug.c $(ROOT)/src/debug.c
 
 .PHONY  : __setup
 ifneq ($(MAKE_DEBUG), 1)

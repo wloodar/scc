@@ -1,5 +1,5 @@
 /**
- * SCC Toolkit
+ * Salt Virtual Machine
  *
  * Copyright (C) 2021  The Salt Programming Language Developers
  *
@@ -20,15 +20,26 @@
  *
  * @author  bellrise
  */
-#include <scc/argparse.h>
-#include <scc/meta.h>
-#include <stdio.h>
+#ifndef SVM_SVMTYPES_H
+#define SVM_SVMTYPES_H 1
+
+/* This provides the base typedefs and base structs used in all of SVM. For
+   building SVMLs, use this header to get all the nice integer types. */
+
+typedef __INT8_TYPE__       i8;
+typedef __INT16_TYPE__      i16;
+typedef __INT32_TYPE__      i32;
+typedef __INT64_TYPE__      i64;
+typedef __UINT8_TYPE__      u8;
+typedef __UINT16_TYPE__     u16;
+typedef __UINT32_TYPE__     u32;
+typedef __UINT64_TYPE__     u64;
 
 
-i32 main(i32 argc, char **argv)
-{
-    ArgumentResult args;
-    argparse(&args, argc, argv);
+#define True    (1)
+#define False   (0)
 
-    return 0;
-}
+#define BOOL_STRING(BOOL) ((BOOL) ? "True" : "False")
+
+
+#endif /* SVM_SVMTYPES_H */

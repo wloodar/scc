@@ -22,15 +22,11 @@
  */
 #include <svm/svmtypes.h>
 #include <scc/argparse.h>
-#include <svm/debug.h>
+#include <scc/meta.h>
 
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-
-#ifndef SCC_VERSION
-# define SCC_VERSION "undefined"
-#endif
 
 #define ARG(SHORT, LONG) (!strcmp(argv[i], SHORT) || !strcmp(argv[i], LONG))
 
@@ -61,8 +57,6 @@ static void version()
 
 u32 argparse(ArgumentResult *ar, i32 argc, char **argv)
 {
-    dprintf("Parsing %d arguments", argc);
-
     for (i32 i = 0; i < argc; i++) {
 
         if (ARG("-h", "--help")) {
